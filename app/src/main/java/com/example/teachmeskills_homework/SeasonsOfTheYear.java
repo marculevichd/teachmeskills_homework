@@ -10,9 +10,7 @@ public class SeasonsOfTheYear {
             changeSeasons(season);
             System.out.println("average temperature " + season.degree);
             System.out.println(season.getDescription());
-
         }
-
     }
 
     public enum Seasons {
