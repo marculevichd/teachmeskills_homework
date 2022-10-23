@@ -1,6 +1,10 @@
 package com.example.teachmeskills_homework;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -23,10 +27,18 @@ public class Homework {
         larek.addProductInList(apple);
         larek.addProductInList(banana);
         larek.addProductInList(potato);
-//сортировка по цене
+//сортировка по цене и вывод в консоль изменненого списка
 
-        larek.returnAllProducts();
-
+        List listProduct = new ArrayList();
+        listProduct.addAll(Shop.listOfProduct.values());
+        Collections.sort(listProduct, new Comparator<Products>() {
+            @Override
+            public int compare(Products o1, Products o2) {
+                return o1.getPrice().compareTo(o2.getPrice());
+            }
+        });
+        System.out.println("Список товаров отсортированный по возрастанию цены " + listProduct);
+// удаляем один товар
         larek.removeProductFromList(1);
 
 
@@ -34,7 +46,7 @@ public class Homework {
 
         larek.returnAllProducts();
 
-
+// редактируем одним товаром весь список товаров
         Products pineapple = new Products(9, "pineapple", 6666);
         larek.editProduct(pineapple);
         larek.returnAllProducts();
