@@ -1,8 +1,10 @@
 package com.example.teachmeskills_homework;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,9 +44,15 @@ public class Homework {
         larek.removeProductFromList(1);
 
 
-// не придумал как сделать перевод словаря в очередь с добавлением объектов
+// перевод в словарь и сортировка по принципу LIFO
+        ArrayDeque queueSortProducts = new ArrayDeque();
 
-        larek.returnAllProducts();
+        Iterator iterator = Shop.listOfProduct.values().iterator();
+        while (iterator.hasNext()){
+            Object current = iterator.next();
+            queueSortProducts.addFirst(current);
+        }
+        System.out.println("Список товаров отсортированный в обратном порядке добавления "+queueSortProducts);
 
 // редактируем одним товаром весь список товаров
         Products pineapple = new Products(9, "pineapple", 6666);
