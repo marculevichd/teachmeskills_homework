@@ -18,7 +18,7 @@ public class HomeTask12 {
         //Task1
         Child childVanya = new Child(1, "vanya", 100);
 
-        IChildToAdult<Child, Adult> iChildToAdult = (child) -> new Adult(child);
+        IChildToAdult<Child, Adult> iChildToAdult = (child) -> new Adult(child);// в () должно быть возвращаемый тип т.е. (adult)
 
         Adult newAdult = iChildToAdult.growChild(childVanya);
         System.out.println(newAdult.getName() + " " + newAdult.getAge() + " " + newAdult.getHeight()+ " " + newAdult.isGrow);
