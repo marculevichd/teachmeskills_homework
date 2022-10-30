@@ -22,6 +22,8 @@ public class HomeTask12 {
 
         Adult newAdult = iChildToAdult.growChild(childVanya);
         System.out.println(newAdult.getName() + " " + newAdult.getAge() + " " + newAdult.getHeight()+ " " + newAdult.isGrow);
+        System.out.println(childVanya.getClass());
+        System.out.println(newAdult.getClass());
 
         //Task2
         List<Adult> adultList = new ArrayList<Adult>();
